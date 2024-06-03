@@ -39,6 +39,13 @@ const Register = () => {
     } catch (err) {
       console.error(err.response.data);
       setErrorMessage(err.response.data.errors ? err.response.data.errors.map(e => e.msg).join(', ') : err.response.data.msg);
+      setFormData({
+        fullname: "",
+        email: "",
+        password: "",
+        no_phone: "",
+        role: "",
+      });
     }
   };
 

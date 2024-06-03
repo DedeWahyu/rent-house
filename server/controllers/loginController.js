@@ -35,7 +35,7 @@ const auth = async (req, res) => {
 
     jwt.sign(payload, secret, { expiresIn }, (err, token) => {
       if (err) throw err;
-      res.json({ token });
+      res.json({ token, role: user.role });
     });
   } catch (err) {
     console.error(err.message);
