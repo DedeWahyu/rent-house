@@ -4,7 +4,7 @@
   text-decoration: none;
 }
 
-/* ini bagian navbar */
+/* ini bagian navbar landingpage */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -114,4 +114,58 @@
 
 .registrasi-container .button-kembali {
   margin-top: 10px;
+}
+
+/* ini bagian homepenyewa */
+.navbar-penyewa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333; 
+  padding: 10px;
+  z-index: 1000;
+}
+
+.navbar-penyewa .fotoprofil {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;  
+  margin-right: 20px;
+}
+
+.navbar-penyewa h3, .navbar-penyewa p {
+  color: white;
+}
+
+.navbar-penyewa p {
+  margin-right: 10px;
+}
+
+.navbar-penyewa .item-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ini bagian myprofile */
+.container-profile {
+  border: 1px solid black;
+  margin-top: 70px;
+  display: flex;  
+  flex-direction: column;
+}
+
+.container-profile p {
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.container-profile .data-profile {
+  margin-left: auto;
+  margin-right: auto;  
 }

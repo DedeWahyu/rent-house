@@ -26,6 +26,8 @@ const auth = async (req, res) => {
       id: user._id,
       user: user.fullname,
       email: user.email,
+      no_phone: user.no_phone,
+      img_url: user.img_url,
       role: user.role,
     };
 
