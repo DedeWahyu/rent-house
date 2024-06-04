@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {jwtDecode} from 'jwt-decode';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Homepenyewa = () => {
   const [userData, setUserData] = useState({
@@ -14,6 +14,8 @@ const Homepenyewa = () => {
   });
   const [selectedFile, setSelectedFile] = useState(null);
   const [profileImage, setProfileImage] = useState('');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -53,6 +55,16 @@ const Homepenyewa = () => {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      await axios.put(`/api/users/logout/${userData.id}`);
+      localStorage.removeItem('token');
+      navigate('/login');
+    } catch (error) {
+      console.error(error);      
+    }
+  };
+
   return (
     <div>
       <nav className='navbar-penyewa'>
@@ -71,8 +83,9 @@ const Homepenyewa = () => {
             <p>Transaksi</p>
           </Link>
           <Link to="/myprofile">
-            <p>My profil</p>
-          </Link>                  
+            <p>My profile</p>
+          </Link>
+          <button className='logout' onClick={handleLogout}>Logout</button>
           <img className='fotoprofil' src={profileImage} alt='Profil'/>
         </div>
       </nav>

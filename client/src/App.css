@@ -4,6 +4,11 @@
   text-decoration: none;
 }
 
+/* ini button logout */
+.logout {
+  margin-right: 10px;
+}
+
 /* ini bagian navbar landingpage */
 .navbar {
   display: flex;
@@ -168,4 +173,21 @@
 .container-profile .data-profile {
   margin-left: auto;
   margin-right: auto;  
+}
+
+.update-form {
+  margin-top: 10px;
+}
+
+.update-form input, .update-form button {
+  margin-top: 10px;
+}
+
+.input-update {
+  display: flex;  
+  align-items: center;
+}
+
+.input-update label {
+  width: 100px;
 }
